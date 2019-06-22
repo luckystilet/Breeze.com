@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'Bitter';
+    src: local('Bitter Regular'), local('Bitter Regular'),
+    url('../fonts/bitter.woff2') format('woff2'),
+    url('../fonts/bitter.woff') format('woff'),
+    url('../fonts/bitter.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Bitter Italic';
+    src: local('Bitter Italic'), local('Bitter Italic'),
+    url('../fonts/bitter-italic.woff2') format('woff2'),
+    url('../fonts/bitter-italic.woff') format('woff'),
+    url('../fonts/bitter-italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: local('Segoe UI Regular'), local('Segoe UI Regular'),
+    url('../fonts/segoe-ui.woff') format('woff'),
+    url('../fonts/segoe-ui.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Segoe UI Bold';
+    src: local('Segoe UI Bold'), local('Segoe UI Bold'),
+    url('../fonts/segoe-ui-bold.woff') format('woff'),
+    url('../fonts/segoe-ui-bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Segoe UI Light';
+    src: local('Segoe UI Light'), local('Segoe UI Light'),
+    url('../fonts/segoe-ui-light.woff') format('woff'),
+    url('../fonts/segoe-ui-light.ttf') format('truetype');
+}

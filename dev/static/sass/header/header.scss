@@ -1,0 +1,227 @@
+.header{
+	&-top{
+		padding-top: 9px;
+		background-color: $athens-gray;
+		background-image: url("../img/top-bg.png");
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-size: 100% 9px;
+		&__inner{
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+	&-middle{
+		border-bottom: 1px solid $alto-lighter;
+		&__inner{
+			height: 200px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			@media screen and(max-width: $tablet-size){
+				flex-wrap: wrap;
+			}
+		}
+	}
+	&-bottom{
+		
+	}
+}
+.greeting{
+	padding-top: 9px;
+	color: $boulder;
+	font-size: 12px;
+	&__link{
+		color: $fountain-blue;
+	}
+}
+.user-settings{
+	display: flex;
+	&>*{
+		&:not(:last-child){margin-right: 24px;}
+		@media screen and(max-width: $tablet-size){
+			&:not(:last-child){margin-right: 12px;}
+		}
+	}
+
+}
+.languages{
+	display: flex;
+	color: $tundora;
+	font-size: 11px;
+	&>*{&:not(:last-child){margin-right: 1px;}}
+	&__item{
+		background-color: $athens-grayer;
+		font-family: 'Segoe UI', sans-serif;
+		line-height: 36px;
+		padding: 0 10px;
+		cursor: pointer;
+		text-transform: uppercase;
+		user-select: none;
+		&--active{
+			font-family: 'Segoe UI Bold', sans-serif;
+			color: $white;
+			background-color: rgba($fountain-blue,.8);
+		}
+	}
+}
+.currency{
+	display: flex;
+	color: $tundora;
+	font-size: 13px;
+	&>*{&:not(:last-child){margin-right: 1px;}}
+	&__item{
+		background-color: $athens-grayer;
+		font-family: 'Segoe UI', sans-serif;
+		line-height: 36px;
+		padding: 0 10px;
+		cursor: pointer;
+		text-transform: uppercase;
+		user-select: none;
+		&--active{
+			font-family: 'Segoe UI Bold', sans-serif;
+			color: $white;
+			background-color: rgba($fountain-blue,.8);
+		}
+	}
+}
+.phone{
+	padding-top: 9px;
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 11px;
+	&__link{
+		// span{
+		// 	@media screen and(max-width: $tablet-size){
+		// 		display: block;
+		// 	}
+		// }
+	}
+	&__icon{
+		width: 16px;
+		height: 13px;
+		margin-right: 8px;
+	}
+}
+.logo{
+	margin-right: 40px;
+	font-family: 'Bitter Italic', serif;
+	font-size: 11px;
+	color: $silver-chalice;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	&__img{
+		width: 132px;
+		height: 56px;
+		user-select: none;
+	}
+	&__text{
+		margin-top: -5px;
+		padding-left: 3px;
+	}
+}
+.search{
+	width: 227px;
+	position: relative;
+	padding-right: 23px;
+	border: 1px solid $silver;
+	border-radius: 2px;
+	.input-field{
+		padding: 6px 9px;
+		font-size: 16px;
+		font-family: 'Segoe UI', sans-serif;
+		width: 100%;
+		color: $mine-shaft;
+		display: flex;
+		align-items: center;
+		border: none;
+		@include placeholder{
+			color: $boulder;
+			font-size: 12px;
+		}
+	}
+	&__icon{
+		cursor: pointer;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 9px;
+		width: 14px;
+		height: 14px;
+	}
+}
+
+.user-menu{
+	display: flex;
+	&__list{
+		display: flex;
+		align-items: center;
+	}
+	&__item{
+		font-size: 12px;
+		padding: 0 15px;
+		line-height: 14px;
+		border-right: 1px solid $alto;
+		font-family: 'Segoe UI', sans-serif;
+		color: $boulder;
+		cursor: pointer;
+		transition: color linear .1s;
+		white-space: nowrap;
+		@media screen and(max-width: $tablet-size){
+			padding: 0 10px;
+		}
+		&:last-child{
+			border: none;
+		}
+		&:hover{
+			color: $black;
+		}
+	}
+}
+.cart{
+	display: flex;
+	align-items: center;
+	padding: 10px 11px;
+	background-color: $athens-grayer-lighter;
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 11px;
+	color: $tundora;
+	cursor: pointer;
+	&__img{
+		height: 13px;
+		width: 16px;
+		margin-right: 8px;
+	}	
+	&__title{
+		margin-right: 3px;
+	}
+}
+.main-menu{
+	@media screen and(max-width: $tablet-size){
+		flex: 1;
+	}
+	&__list{
+		width: 100%;
+		display: flex;
+		background-color: $athens-gray;
+	}
+	&__item{
+	}
+	&__link{
+		display: block;
+		font-size: 14px;
+		padding: 18px 22px;
+		color: $tundora;
+		text-transform: uppercase;
+		transition: all linear .1s;
+		@media screen and(max-width: $tablet-size){
+			font-size: 12px;
+			padding: 15px 10px;
+		}
+		&:hover{
+			color: $white;
+			background-color: $half-baked;
+		}
+	}
+}

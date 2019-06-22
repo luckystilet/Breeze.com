@@ -1,0 +1,36 @@
+.product-advantages{
+	margin-top: 24px;
+	display: flex;
+	&__item{
+		position: relative;
+		padding-left: 110px;
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		border: 1px solid $alto-lighter;
+		margin-right: 24px;
+		border-radius: 2px;
+		height: 100px;
+		&:last-child{
+			margin-right: 0;
+		}
+	}	
+	&__img{
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 15px;
+		width: 76px;
+		height: 76px;
+	}
+	&__title{
+		font-size: 24px;
+		color: $tundora;
+	}
+	&__text{
+		font-family: 'Segoe UI Light', sans-serif;
+		font-size: 20px;
+		color: $boulder;
+	}
+}

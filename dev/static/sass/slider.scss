@@ -1,0 +1,99 @@
+.slider{
+	margin-top: 20px;
+	&__inner{
+		height: 480px;
+		position: relative;
+		background-image: url("../img/slider_bg.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+	}
+	&__item{
+		&-inner{
+			display: flex;
+		}
+	}
+	&__product{
+		margin-left: 43px;
+	}
+	&__controls{
+		position: absolute;
+		top: 50%;
+		background-color: rgba($white,.85);
+		height: 42px;
+		width: 42px;
+		transform: translateY(-50%);
+		z-index: 1;
+		display: flex !important;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		&--prev{
+			left: 0;
+			.slider-controls-inner{
+				transform: rotateZ(135deg);
+			}
+		}
+		&--next{
+			right: 0;
+			.slider-controls-inner{
+				transform: rotateZ(-45deg);
+			}
+		}
+	}
+	&__dots ul{
+		position: absolute;
+		display: flex !important; // Переопределение inline стилей slick
+		bottom: 20px;
+		right: 20px;
+		z-index: 1;
+	}
+	&__dot{
+		display: block;
+		height: 20px;
+		width: 20px;
+		border-radius: 50%;
+		border: 5px solid rgba($alto,.85);
+		background-color: rgba($tundora,.85);
+		cursor: pointer;
+		margin-right: 6px;
+	}
+	&__descr{
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		color: $mine-shaft;
+		margin-top: 70px;
+	}
+	&__title{
+		padding: 0 10px;
+		font-size: 36px;
+		line-height: 1.36;
+		background-color: $black-squeeze;
+		margin-bottom: 18px;
+		letter-spacing: .5px;
+	}
+	&__text{
+		padding: 0 14px;
+		font-size: 16px;
+		line-height: 1.7;
+		background-color: $black-squeeze;
+		margin-bottom: 2px;
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+	&-controls-inner{
+		width: 8px;
+		height: 8px;
+		border-bottom: 1px solid $boulder;
+		border-right: 1px solid $boulder;
+		// &:after{
+		// 	content: '';
+		// }
+	}
+}
+.slick-active a{
+	border: 5px solid rgba($tundora,.85);
+	background-color: rgba($alto,.85);
+}

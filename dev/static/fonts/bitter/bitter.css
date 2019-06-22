@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Bitter';
+    src: local('Bitter Italic'), local('Bitter-Italic'), url('Bitteritalic.woff2') format('woff2'), url('Bitteritalic.woff') format('woff'), url('Bitteritalic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Bitter';
+    src: local('Bitter'), local('Bitter-Regular'), url('Bitter.woff2') format('woff2'), url('Bitter.woff') format('woff'), url('Bitter.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Bitter';
+    src: local('Bitter Bold Italic'), local('Bitter-BoldItalic'), url('Bitterbolditalic.woff2') format('woff2'), url('Bitterbolditalic.woff') format('woff'), url('Bitterbolditalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Bitter';
+    src: local('Bitter Bold'), local('Bitter-Bold'), url('Bitterbold.woff2') format('woff2'), url('Bitterbold.woff') format('woff'), url('Bitterbold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}

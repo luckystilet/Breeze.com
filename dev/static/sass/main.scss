@@ -1,0 +1,77 @@
+@import 'libs';
+@import 'vars';
+@import 'mixins';
+@import 'fonts';
+@import 'header/header';
+@import 'slider';
+@import 'product-advantages';
+html{
+  height: 100%;
+  font-size: 16px;
+  font-family: 'Bitter', serif;
+  overflow-x: hidden;
+}
+body{
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+h1,h2,h3,h4,h5,h6{
+  margin: 0;
+}
+ul,li{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+p{
+  margin: 0;
+}
+a{
+  text-decoration: none;
+  color: $tundora;
+}
+audio,canvas,iframe,img,svg,video{
+  vertical-align: middle;
+} 
+textarea{
+  resize: none;
+  outline: none;
+}
+section{
+  position: relative;
+  padding: 40px 0;
+}
+input,select,button{
+  outline: none;
+}
+*, *:before, *:after{
+  box-sizing: border-box;
+}
+/* =================MY CODE */
+.container{
+  margin: 0 auto;
+  max-width: 1024px;
+  padding: 0 20px;
+  width: 100%;
+  @media screen and(max-width: $tablet-size){
+    padding: 0 10px;
+  }
+}
+.mobile-br{
+  display: none;
+  @media screen and(max-width: $tablet-size){
+    display: block;
+  }
+}
+h1{
+  color: #000;
+  font-family: 'Bitter';
+}
+h2{
+  font-family: 'Segoe UI';
+}
+h3{
+  font-family: 'Segoe UI Bold';
+  font-weight: bold;
+}

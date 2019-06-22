@@ -1,0 +1,32 @@
+{
+  "name": "luckystilet",
+  "description": "luckystilet",
+  "main": "gulpfile.js",
+  "authors": [
+    "luckystilet"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "luckystilet"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "dev/static/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "components-font-awesome": "^5.4.2",
+    "font-awesome": "components-font-awesome#^5.0.6",
+    "jQuery.mmenu": "mmenu#^7.0.6",
+    "fotorama": "^4.6.4",
+    "matchHeight": "matchheight#^0.7.2",
+    "simplebar": "^2.6.1",
+    "owl.carousel": "^2.3.4",
+    "slick-carousel": "^1.8.1",
+    "jquery-validation": "^1.19.0"
+  }
+}
