@@ -1,0 +1,12 @@
+form.form.login
+	.form__header Авторизация
+		.form__close-btn-wrapper#close-login
+			include ../modules/close-btn
+	.form__body
+		label.form__label
+			input(type="text" name="name" placeholder="Логин").form__input
+		label.form__label
+			input(type="password" name="password" placeholder="Пароль").form__input
+	.form__footer
+		input(type="submit" value="Войти").btn.btn--small.btn--bd-gold.btn--cblack
+		a(href="").btn.btn--small.btn--bgct.btn--cblack.btn--fwn Забыли пароль?

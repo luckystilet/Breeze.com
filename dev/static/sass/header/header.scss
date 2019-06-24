@@ -9,6 +9,7 @@
 		&__inner{
 			display: flex;
 			justify-content: space-between;
+			align-items: center;
 		}
 	}
 	&-middle{
@@ -18,9 +19,6 @@
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-			@media screen and(max-width: $tablet-size){
-				flex-wrap: wrap;
-			}
 		}
 	}
 	&-bottom{
@@ -31,25 +29,40 @@
 	padding-top: 9px;
 	color: $boulder;
 	font-size: 12px;
+	margin-right: 100px;
 	&__link{
 		color: $fountain-blue;
+		cursor: pointer;
 	}
 }
 .user-settings{
 	display: flex;
 	&>*{
 		&:not(:last-child){margin-right: 24px;}
-		@media screen and(max-width: $tablet-size){
-			&:not(:last-child){margin-right: 12px;}
-		}
 	}
 
 }
 .languages{
-	display: flex;
-	color: $tundora;
-	font-size: 11px;
-	&>*{&:not(:last-child){margin-right: 1px;}}
+	&__mobile{
+		display: none;
+		font-family: 'Segoe UI Bold', sans-serif;
+		color: $white;
+		background-color: rgba($fountain-blue,.8);
+		line-height: 36px;
+		padding: 0 10px;
+		cursor: pointer;
+		text-transform: uppercase;
+		user-select: none;
+	}
+	&__list{
+		display: flex;
+		color: $tundora;
+		font-size: 11px;
+		&>*{&:not(:last-child){margin-right: 1px;}}
+		&--active{
+			display: flex;
+		}
+	}
 	&__item{
 		background-color: $athens-grayer;
 		font-family: 'Segoe UI', sans-serif;
@@ -66,10 +79,26 @@
 	}
 }
 .currency{
-	display: flex;
-	color: $tundora;
-	font-size: 13px;
-	&>*{&:not(:last-child){margin-right: 1px;}}
+	&__mobile{
+		display: none;
+		font-family: 'Segoe UI Bold', sans-serif;
+		color: $white;
+		background-color: rgba($fountain-blue,.8);
+		line-height: 36px;
+		padding: 0 10px;
+		cursor: pointer;
+		text-transform: uppercase;
+		user-select: none;
+	}
+	&__list{
+		display: flex;
+		color: $tundora;
+		font-size: 13px;
+		&>*{&:not(:last-child){margin-right: 1px;}}
+		&--active{
+			display: flex;
+		}
+	}
 	&__item{
 		background-color: $athens-grayer;
 		font-family: 'Segoe UI', sans-serif;
@@ -90,11 +119,6 @@
 	font-family: 'Segoe UI', sans-serif;
 	font-size: 11px;
 	&__link{
-		// span{
-		// 	@media screen and(max-width: $tablet-size){
-		// 		display: block;
-		// 	}
-		// }
 	}
 	&__icon{
 		width: 16px;
@@ -119,6 +143,7 @@
 	&__text{
 		margin-top: -5px;
 		padding-left: 3px;
+		white-space: nowrap;
 	}
 }
 .search{
@@ -127,6 +152,13 @@
 	padding-right: 23px;
 	border: 1px solid $silver;
 	border-radius: 2px;
+	&--active{
+		transform: scale(1.5);
+		background-color: $white;
+	}
+	&--active-big{
+		transform: scale(2);
+	}
 	.input-field{
 		padding: 6px 9px;
 		font-size: 16px;
@@ -159,6 +191,7 @@
 		align-items: center;
 	}
 	&__item{
+		position: relative;
 		font-size: 12px;
 		padding: 0 15px;
 		line-height: 14px;
@@ -168,9 +201,6 @@
 		cursor: pointer;
 		transition: color linear .1s;
 		white-space: nowrap;
-		@media screen and(max-width: $tablet-size){
-			padding: 0 10px;
-		}
 		&:last-child{
 			border: none;
 		}
@@ -178,6 +208,14 @@
 			color: $black;
 		}
 	}
+	// &__link{
+	// 	&--login{
+	// 		position: relative;
+	// 	}
+	// 	&--signup{
+	// 		position: relative;
+	// 	}
+	// }
 }
 .cart{
 	display: flex;
@@ -198,9 +236,6 @@
 	}
 }
 .main-menu{
-	@media screen and(max-width: $tablet-size){
-		flex: 1;
-	}
 	&__list{
 		width: 100%;
 		display: flex;
@@ -215,10 +250,7 @@
 		color: $tundora;
 		text-transform: uppercase;
 		transition: all linear .1s;
-		@media screen and(max-width: $tablet-size){
-			font-size: 12px;
-			padding: 15px 10px;
-		}
+		white-space: nowrap;
 		&:hover{
 			color: $white;
 			background-color: $half-baked;

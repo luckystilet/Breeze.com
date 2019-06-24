@@ -2,11 +2,11 @@
 <html lang="ru-RU">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE = edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="keywords" content="">
     <link rel="stylesheet" type="text/css" href="static/css/main.css">
-    <title>Главная страница
+    <title>Breeze
     </title>
   </head>
   <body>
@@ -15,17 +15,23 @@
         <div class="container">
           <div class="header-top__inner">
             <div class="phone"><img class="phone__icon" src="static/img/tel.png" alt="icon"><a class="phone__link" href="tel:7771001234"> <span>Call Us </span>+777 (100) 1234</a></div>
-            <div class="greeting">Welcome visitor you can <br class="mobile-br"><a class="greeting__link greeting__link--login" href="">login</a> or <a class="greeting__link greeting__link--sign-up" href="">create an account.</a></div>
+            <div class="greeting">Welcome visitor you can <br class="mobile-br"><span class="greeting__link greeting__link--login">login</span> or <span class="greeting__link greeting__link--signup">create an account.</span></div>
             <div class="user-settings">
               <div class="languages">
-                <div class="languages__item languages__item--active">EN</div>
-                <div class="languages__item">FR</div>
-                <div class="languages__item">GM</div>
+                <div class="languages__mobile"></div>
+                <ul class="languages__list">
+                  <li class="languages__item languages__item--active">EN</li>
+                  <li class="languages__item">FR</li>
+                  <li class="languages__item">GM</li>
+                </ul>
               </div>
               <div class="currency">
-                <div class="currency__item currency__item--active">$</div>
-                <div class="currency__item">€</div>
-                <div class="currency__item">£</div>
+                <div class="currency__mobile"></div>
+                <ul class="currency__list">
+                  <li class="currency__item currency__item--active">$</li>
+                  <li class="currency__item">€</li>
+                  <li class="currency__item">£</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -38,13 +44,63 @@
               <input class="input-field" placeholder="Search entire store here..."><img class="search__icon" src="static/img/search.png" alt="">
             </div>
             <div class="user-menu">
-              <ul class="user-menu__list">
-                <il class="user-menu__item">My Account</il>
-                <il class="user-menu__item">My Wishlist</il>
-                <il class="user-menu__item">Log in</il>
-                <il class="user-menu__item">Sign up</il>
-              </ul>
-              <div class="cart"><img class="cart__img" src="static/img/cart.png"><span class="cart__title">Cart </span><span class="cart__currency">$</span><span class="cart__amount">0.00</span></div>
+              <div class="user-menu__list">
+                <div class="user-menu__item">My Account</div>
+                <div class="user-menu__item">My Wishlist</div>
+                <div class="user-menu__item">
+                  <div class="user-menu__link user-menu__link--login">Log in</div>
+                  <form class="form login">
+                    <div class="form__header">Авторизация
+                      <div class="form__close-btn-wrapper" id="close-login">
+                        <div class="close-btn">
+                          <div class="close-btn__inner"><span></span><span></span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form__body">
+                      <label class="form__label">
+                        <input class="form__input" type="text" name="name" placeholder="Логин">
+                      </label>
+                      <label class="form__label">
+                        <input class="form__input" type="password" name="password" placeholder="Пароль">
+                      </label>
+                    </div>
+                    <div class="form__footer">
+                      <input class="btn btn--small btn--bd-gold btn--cblack" type="submit" value="Войти"><a class="btn btn--small btn--bgct btn--cblack btn--fwn" href="">Забыли пароль?</a>
+                    </div>
+                  </form>
+                </div>
+                <div class="user-menu__item">
+                  <div class="user-menu__link user-menu__link--signup">Sign up</div>
+                  <form class="form signup">
+                    <div class="form__header">Регистрация
+                      <div class="form__close-btn-wrapper" id="close-signup">
+                        <div class="close-btn">
+                          <div class="close-btn__inner"><span></span><span></span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form__body">
+                      <label class="form__label">
+                        <input class="form__input" type="text" name="name" placeholder="Логин">
+                      </label>
+                      <label class="form__label">
+                        <input class="form__input" type="email" name="email" placeholder="E-mail">
+                      </label>
+                      <label class="form__label">
+                        <input class="form__input" type="password" name="password" placeholder="Пароль">
+                      </label>
+                      <label class="form__label">
+                        <input class="form__input" type="password" name="password" placeholder="Повторите пароль">
+                      </label>
+                    </div>
+                    <div class="form__footer">
+                      <input class="btn btn--small btn--bd-gold btn--cblack" type="submit" value="Создать">
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="cart"><img class="cart__img" src="static/img/cart.png" alt=""><span class="cart__title">Cart </span><span class="cart__currency">$</span><span class="cart__amount">0.00</span></div>
             </div>
           </div>
         </div>
@@ -75,17 +131,17 @@
             <div class="slider__dots"></div>
             <div class="slider-js">
               <div class="slider__item">
-                <div class="slider__item-inner"><img class="slider__product" src="static/img/slider_product.png">
+                <div class="slider__item-inner"><img class="slider__product" src="static/img/slider_product.png" alt="">
                   <div class="slider__descr"><span class="slider__title">Breeze Noticeables</span><span class="slider__text">The new series of natural air fresheners.</span><span class="slider__text">Febreze Noticeables Meadows & Rain</span><span class="slider__text">Air Freshener Refill.</span></div>
                 </div>
               </div>
               <div class="slider__item">
-                <div class="slider__item-inner"><img class="slider__product" src="static/img/slider_product.png">
+                <div class="slider__item-inner"><img class="slider__product" src="static/img/slider_product.png" alt="">
                   <div class="slider__descr"><span class="slider__title">Breeze Noticeables</span><span class="slider__text">The new series of natural air fresheners.</span><span class="slider__text">Febreze Noticeables Meadows & Rain</span><span class="slider__text">Air Freshener Refill.</span></div>
                 </div>
               </div>
               <div class="slider__item">
-                <div class="slider__item-inner"><img class="slider__product" src="static/img/slider_product.png">
+                <div class="slider__item-inner"><img class="slider__product" src="static/img/slider_product.png" alt="">
                   <div class="slider__descr"><span class="slider__title">Breeze Noticeables</span><span class="slider__text">The new series of natural air fresheners.</span><span class="slider__text">Febreze Noticeables Meadows & Rain</span><span class="slider__text">Air Freshener Refill.</span></div>
                 </div>
               </div>
@@ -93,17 +149,26 @@
           </div>
         </div>
         <div class="product-advantages">
-          <div class="product-advantages__item"><img class="product-advantages__img" src="static/img/product-advantages__sale.png">
-            <div class="product-advantages__title">Best price </div>
-            <div class="product-advantages__text">this week</div>
+          <div class="product-advantages__item">
+            <div class="product-advantages__img-wrapper"><img class="product-advantages__img" src="static/img/product-advantages__sale.png" alt=""></div>
+            <div class="product-advantages__content">
+              <div class="product-advantages__title">Best price </div>
+              <div class="product-advantages__text">this week</div>
+            </div>
           </div>
-          <div class="product-advantages__item"><img class="product-advantages__img" src="static/img/product-advantages__new-small.png">
-            <div class="product-advantages__title">New smells</div>
-            <div class="product-advantages__text">in the next series</div>
+          <div class="product-advantages__item">
+            <div class="product-advantages__img-wrapper"><img class="product-advantages__img" src="static/img/product-advantages__new-small.png" alt=""></div>
+            <div class="product-advantages__content">
+              <div class="product-advantages__title">New smells</div>
+              <div class="product-advantages__text">in the next series</div>
+            </div>
           </div>
-          <div class="product-advantages__item"><img class="product-advantages__img" src="static/img/product-advantages__only-natural.png">
-            <div class="product-advantages__title">Only natural</div>
-            <div class="product-advantages__text">air fresheners</div>
+          <div class="product-advantages__item">
+            <div class="product-advantages__img-wrapper"><img class="product-advantages__img" src="static/img/product-advantages__only-natural.png" alt=""></div>
+            <div class="product-advantages__content">
+              <div class="product-advantages__title">Only natural</div>
+              <div class="product-advantages__text">air fresheners</div>
+            </div>
           </div>
         </div>
       </div>

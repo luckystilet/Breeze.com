@@ -1,20 +1,21 @@
 .slider{
 	margin-top: 20px;
 	&__inner{
-		height: 480px;
 		position: relative;
-		background-image: url("../img/slider_bg.jpg");
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: center center;
 	}
 	&__item{
 		&-inner{
 			display: flex;
+			height: 480px;
+			background-image: url("../img/slider_bg.jpg");
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center center;
 		}
 	}
 	&__product{
 		margin-left: 43px;
+		width: 46%;
 	}
 	&__controls{
 		position: absolute;

@@ -1,0 +1,15 @@
+form.form.signup
+	.form__header Регистрация
+		.form__close-btn-wrapper#close-signup
+			include ../modules/close-btn
+	.form__body
+		label.form__label
+			input(type="text" name="name" placeholder="Логин").form__input
+		label.form__label
+			input(type="email" name="email" placeholder="E-mail").form__input
+		label.form__label
+			input(type="password" name="password" placeholder="Пароль").form__input
+		label.form__label
+			input(type="password" name="password" placeholder="Повторите пароль").form__input
+	.form__footer
+		input(type="submit" value="Создать").btn.btn--small.btn--bd-gold.btn--cblack

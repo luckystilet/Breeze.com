@@ -1,7 +1,7 @@
 extends ../layout/main
 
 block title
-	| Главная страница
+	| Breeze
 
 block content
 	header.header
@@ -16,18 +16,22 @@ block content
 					.greeting
 						| Welcome visitor you can 
 						br.mobile-br
-						a(href="").greeting__link.greeting__link--login login
+						span.greeting__link.greeting__link--login login
 						|  or 
-						a(href="").greeting__link.greeting__link--sign-up create an account.
+						span.greeting__link.greeting__link--signup create an account.
 					.user-settings
 						.languages
-							.languages__item.languages__item--active EN
-							.languages__item FR
-							.languages__item GM
+							.languages__mobile
+							ul.languages__list
+								li.languages__item.languages__item--active EN
+								li.languages__item FR
+								li.languages__item GM
 						.currency
-							.currency__item.currency__item--active $
-							.currency__item €
-							.currency__item £
+							.currency__mobile
+							ul.currency__list
+								li.currency__item.currency__item--active $
+								li.currency__item €
+								li.currency__item £
 		.header-middle
 			.container
 				.header-middle__inner
@@ -39,13 +43,17 @@ block content
 						img(src="static/img/search.png" alt="").search__icon
 					.user-menu
 						//- без ссылок т.к. это будут попапы
-						ul.user-menu__list
-							il.user-menu__item My Account
-							il.user-menu__item My Wishlist
-							il.user-menu__item Log in
-							il.user-menu__item Sign up
+						.user-menu__list
+							.user-menu__item My Account
+							.user-menu__item My Wishlist
+							.user-menu__item
+								.user-menu__link.user-menu__link--login Log in
+								include ../modules/login
+							.user-menu__item
+								.user-menu__link.user-menu__link--signup Sign up
+								include ../modules/signup
 						.cart
-							img(src="static/img/cart.png").cart__img
+							img(src="static/img/cart.png" alt="").cart__img
 							span.cart__title Cart 
 							span.cart__currency $
 							span.cart__amount 0.00
@@ -76,7 +84,7 @@ block content
 					.slider-js
 						.slider__item
 							.slider__item-inner
-								img(src="static/img/slider_product.png").slider__product
+								img(src="static/img/slider_product.png" alt="").slider__product
 								.slider__descr
 									span.slider__title Breeze Noticeables
 									span.slider__text The new series of natural air fresheners.
@@ -84,7 +92,7 @@ block content
 									span.slider__text Air Freshener Refill.
 						.slider__item
 							.slider__item-inner
-								img(src="static/img/slider_product.png").slider__product
+								img(src="static/img/slider_product.png" alt="").slider__product
 								.slider__descr
 									span.slider__title Breeze Noticeables
 									span.slider__text The new series of natural air fresheners.
@@ -92,7 +100,7 @@ block content
 									span.slider__text Air Freshener Refill.
 						.slider__item
 							.slider__item-inner
-								img(src="static/img/slider_product.png").slider__product
+								img(src="static/img/slider_product.png" alt="").slider__product
 								.slider__descr
 									span.slider__title Breeze Noticeables
 									span.slider__text The new series of natural air fresheners.
@@ -100,16 +108,22 @@ block content
 									span.slider__text Air Freshener Refill.
 			.product-advantages
 				.product-advantages__item
-					img(src="static/img/product-advantages__sale.png").product-advantages__img
-					.product-advantages__title Best price 
-					.product-advantages__text this week
+					.product-advantages__img-wrapper
+						img(src="static/img/product-advantages__sale.png" alt="").product-advantages__img
+					.product-advantages__content
+						.product-advantages__title Best price 
+						.product-advantages__text this week
 				.product-advantages__item
-					img(src="static/img/product-advantages__new-small.png").product-advantages__img
-					.product-advantages__title New smells
-					.product-advantages__text in the next series
+					.product-advantages__img-wrapper
+						img(src="static/img/product-advantages__new-small.png" alt="").product-advantages__img
+					.product-advantages__content
+						.product-advantages__title New smells
+						.product-advantages__text in the next series
 				.product-advantages__item
-					img(src="static/img/product-advantages__only-natural.png").product-advantages__img
-					.product-advantages__title Only natural
-					.product-advantages__text air fresheners
+					.product-advantages__img-wrapper
+						img(src="static/img/product-advantages__only-natural.png" alt="").product-advantages__img
+					.product-advantages__content
+						.product-advantages__title Only natural
+						.product-advantages__text air fresheners
 
 

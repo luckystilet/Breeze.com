@@ -1,0 +1,281 @@
+@media screen and(max-width: 960px){
+	
+}
+@media screen and(max-width: 860px){
+	.slider{
+		&__title{
+			font-size: 28px;
+			padding: 0 5px;
+		}
+		&__text{
+			font-size: 14px;
+			padding: 0 7px;
+		}
+	}
+	.greeting{
+		margin-right: 50px;
+	}
+	.product-advantages{
+		&__title{
+			font-size: 22px;
+		}
+		&__text{
+			font-size: 18px;
+		}
+	}
+}
+@media screen and(max-width: 780px){
+	.search{
+		min-width: 80px;
+		margin-right: 20px;
+		width: auto;
+		flex-shrink: 2;
+	}
+	.logo{
+		width: auto;
+		margin-right: 20px;
+		flex-shrink: 0.5;
+		&__img{
+			width: 100%;
+		}
+	}
+	.header{
+		&-middle{
+			&__inner{
+				justify-content: space-between;
+				flex-wrap: nowrap;
+				height: auto;
+				margin-top: 20px;
+				align-content: flex-start;
+			}
+		}
+	}
+	.user-menu{
+		margin-left: auto;
+		margin: 30px 0;
+		&__list{
+		}
+	}
+	.slider{
+		&__descr{
+			margin-top: 40px;
+		}
+		&__controls{
+			width: 30px;
+			height: 30px;
+		}
+		&__product{
+			margin-left: 0;
+		}
+	}
+	.mobile-br{
+		display: block;
+	}
+	.phone{
+		padding-top: 4px;
+	}
+	.greeting{
+		padding-top: 4px;
+		font-size: 10px;
+	}
+	.product-advantages{
+		&__title{
+			font-size: 18px;
+		}
+		&__text{
+			font-size: 16px;
+		}
+	}
+}
+@media screen and(max-width: 640px){
+	.header-middle{
+		&__inner{
+			margin-top: 15px;
+		}
+	}
+	.user-menu{
+		margin: 15px 0;
+	}
+	.main-menu{
+		&__link{
+			padding: 16px 18px;
+			font-size: 12px;
+		}
+	}
+	.slider{
+		&__product{
+			width: 40%;
+		}
+		&__title{
+			font-size: 22px;
+			padding: 0 3px;
+			margin-bottom: 9px;
+		}
+		&__text{
+			font-size: 12px;
+			padding: 0 4px;
+		}
+	}
+	.greeting{
+		margin-right: 20px;
+	}
+	.user-settings{
+		&>*{&:not(:last-child){margin-right: 12px;}}
+	}
+	.currency{
+		position: relative;
+		&__mobile{
+			display: block;
+			width: 30px;
+		}
+		&__list{
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform-origin: left center;
+			transform: scale(0) translateX(-82%) translateY(200px);
+			transition: all linear .2s;
+			background-color: $geraldine;
+			border-radius: 4px;
+			padding: 3px;
+			&--active{
+				transform: scale(1) translateX(-82%) translateY(0px);
+			}
+		}
+	}
+	.languages{
+		position: relative;
+		&__mobile{
+			display: block;
+			width: 47px;
+			text-align: center;
+		}
+		&__list{
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform-origin: center left;
+			transform: scale(0) translateX(-50%) translateY(200px);
+			transition: all linear .3s;
+			background-color: $geraldine;
+			border-radius: 4px;
+			padding: 3px;
+			z-index: 1;
+			&--active{
+				transform: scale(1) translateX(-50%) translateY(0px);
+			}
+		}
+	}
+	.slider__dots ul{
+		bottom: 10px;
+		right: 10px;
+	}
+	.product-advantages{
+		&__item{
+			margin-right: 12px;
+		}
+		&__title{
+			font-size: 14px;
+		}
+		&__text{
+			font-size: 12px;
+		}
+	}
+}
+@media screen and(max-width: 540px){
+	.main-menu{
+		&__link{
+			padding: 14px 12px;
+			font-size: 10px;
+		}
+	}
+	.logo__text{
+		margin-top: -5px;
+		padding-left: 14px;
+	}
+	.slider{
+		&__descr{
+			margin-left: -10px;
+		}
+		&__controls{
+			width: 16px;
+			height: 16px;
+		}
+		&__title{
+			font-size: 18px;
+			padding: 0 3px;
+		}
+		&__text{
+			font-size: 10px;
+			padding: 0 4px;
+		}
+	}
+	.greeting{
+		display: none;
+	}
+	.product-advantages{
+		&__item{
+			margin-right: 8px;
+		}
+		&__title{
+			font-size: 12px;
+		}
+		&__text{
+			font-size: 8px;
+		}
+	}
+	.signup{
+		right: 140px;
+	}
+	.login{
+		right: 78px;
+	}
+}
+@media screen and(max-width: 420px){
+	.user-menu{
+		&__item{
+			padding: 0 10px;
+		}
+	}
+	.main-menu{
+		&__link{
+			padding: 14px 6px;
+			font-size: 8.5px;
+		}
+	}
+	.logo{
+		margin-right: 10px;
+	}
+	.search{
+		margin-right: 10px;
+	}
+	.slider{
+		&__dot{
+			width: 15px;
+			height: 15px;
+			border-width: 3px;
+		}
+		&__title{
+			font-size: 16px;
+			padding: 0 3px;
+		}
+		&__text{
+			font-size: 8px;
+			padding: 0 4px;
+		}
+	}
+	.slick-active a{
+		border-width: 3px;
+	}
+	.product-advantages{
+		&__item{
+			margin-right: 6px;
+		}
+		&__title{
+			font-size: 8px;
+		}
+		&__text{
+			font-size: 6px;
+		}
+	}
+}
