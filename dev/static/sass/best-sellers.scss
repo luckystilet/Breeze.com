@@ -1,0 +1,132 @@
+.best-sellers{
+	margin-bottom: 200px;
+	&__body{
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+}
+.card{
+	overflow: hidden;
+	padding: 3px;
+	width: 234px;
+	margin-bottom: 24px;
+	&__body{
+		position: relative;
+		padding: 8px;
+		border: 1px solid $alto-lighter;
+		border-radius: 2px 2px 0 0;
+	}
+	&__footer{
+		border: 1px solid $alto-lighter;
+		border-top: none;
+		display: flex;
+		height: 44px;
+		border-radius: 0px 0 2px 2px;
+	}
+	&-body{
+		&__image{
+			&-bg{
+				height: 210px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: $alabaster;
+			}
+		}
+		&__descr{
+			margin-top: 10px;
+			color: $boulder;
+			font-family: 'Bitter', serif;
+			font-size: 13px;
+		}
+	}
+	&-footer{
+		&__to-cart{
+			background-color: $athens-gray;
+		}
+		&__icon{
+			cursor: pointer;
+			&--transfer{
+				height: 12px;
+				width: 12px;
+			}
+			&--heart{
+				width: 12px;
+				height: 12px;
+			}
+			&--to-cart{
+				width: 18px;
+				height: 14px;
+			}
+		}
+		&__item{
+			display: flex;
+			flex-basis: 18.9%;
+			align-items: center;
+			justify-content: center;
+			border-right: 1px solid $alto-lighter;
+			&:last-child{
+				border: none;
+			}
+		}
+		&__price{
+			flex-basis: 43.1%;
+			flex-wrap: wrap;
+			padding: 8px;
+		}
+		&-price{
+			&-current{
+				font-family: 'Bitter', serif;
+				flex-basis: 100%;
+				font-size: 12px;
+				color: $astral;
+			}
+			&-old{
+				font-family: 'Segoe UI';
+				flex-basis: 100%;
+				font-size: 11px;
+				color: $boulder;
+				text-decoration: line-through;
+			}
+		}
+	}
+}
+
+.tape{
+	position: absolute;
+	transform: rotateZ(-45deg);
+	top: 11px;
+	left: -20px;
+	&__inner{
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-family: 'Segoe UI Bold', sans-serif;
+		color: $white;
+		font-size: 11px;
+		line-height: 16px;
+		text-transform: uppercase;
+		background-color: $chestnut-rose;
+		height: 14px;
+		width: 76px;
+		user-select: none;
+		&:after,&:before{
+			content: '';
+			position: absolute;
+			bottom: -2.8px;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 3px 3px 0 3px;
+			border-color: $tall-poppy transparent transparent transparent;
+		}
+		&:before{
+			left: 0;
+		}
+		&:after{
+			right: 0;
+		}
+	}
+}

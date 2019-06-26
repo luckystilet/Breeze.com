@@ -27,6 +27,10 @@
   font-family: 'Segoe UI Light';
   src: local("Segoe UI Light"), local("Segoe UI Light"), url("../fonts/segoe-ui-light.woff") format("woff"), url("../fonts/segoe-ui-light.ttf") format("truetype"); }
 
+@font-face {
+  font-family: 'Segoe UI Italic';
+  src: local("Segoe UI Italic"), local("Segoe UI Italic"), url("../fonts/segoe-ui-italic.woff") format("woff"), url("../fonts/segoe-ui-italic.ttf") format("truetype"); }
+
 .header-top {
   padding-top: 9px;
   background-color: #F4F6F8;
@@ -186,17 +190,24 @@
 
 .search {
   width: 227px;
-  position: relative;
-  padding-right: 23px;
-  border: 1px solid #CBCBCB;
-  border-radius: 2px; }
-  .search--active {
-    transform: scale(1.5);
-    background-color: #ffffff; }
-  .search--active-big {
-    transform: scale(2); }
+  height: 35px;
+  position: relative; }
+  .search__inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-align: center;
+        align-items: center;
+    border: 1px solid #CBCBCB;
+    border-radius: 2px;
+    transition: all linear .2s; }
   .search .input-field {
-    padding: 6px 9px;
+    padding: 6px 0px 6px 9px;
     font-size: 16px;
     font-family: 'Segoe UI', sans-serif;
     width: 100%;
@@ -219,13 +230,17 @@
       color: #777777;
       font-size: 12px; }
   .search__icon {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 9px;
+    margin: 0 8px;
     width: 14px;
-    height: 14px; }
+    height: 14px;
+    cursor: pointer; }
+  .search--active .search__inner {
+    left: 50%;
+    width: 200px;
+    transform: translateX(-50%) scale(1.2);
+    z-index: 999;
+    background-color: #ffffff;
+    border: 2px solid #CBCBCB; }
 
 .user-menu {
   display: -ms-flexbox;
@@ -594,6 +609,131 @@
   .btn--fwn {
     font-weight: normal; }
 
+.best-sellers {
+  margin-bottom: 200px; }
+  .best-sellers__body {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+
+.card {
+  overflow: hidden;
+  padding: 3px;
+  width: 234px;
+  margin-bottom: 24px; }
+  .card__body {
+    position: relative;
+    padding: 8px;
+    border: 1px solid #e0e0e0;
+    border-radius: 2px 2px 0 0; }
+  .card__footer {
+    border: 1px solid #e0e0e0;
+    border-top: none;
+    display: -ms-flexbox;
+    display: flex;
+    height: 44px;
+    border-radius: 0px 0 2px 2px; }
+  .card-body__image-bg {
+    height: 210px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    background-color: #f7f7f7; }
+  .card-body__descr {
+    margin-top: 10px;
+    color: #777777;
+    font-family: 'Bitter', serif;
+    font-size: 13px; }
+  .card-footer__to-cart {
+    background-color: #F4F6F8; }
+  .card-footer__icon {
+    cursor: pointer; }
+    .card-footer__icon--transfer {
+      height: 12px;
+      width: 12px; }
+    .card-footer__icon--heart {
+      width: 12px;
+      height: 12px; }
+    .card-footer__icon--to-cart {
+      width: 18px;
+      height: 14px; }
+  .card-footer__item {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-preferred-size: 18.9%;
+        flex-basis: 18.9%;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+    border-right: 1px solid #e0e0e0; }
+    .card-footer__item:last-child {
+      border: none; }
+  .card-footer__price {
+    -ms-flex-preferred-size: 43.1%;
+        flex-basis: 43.1%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 8px; }
+  .card-footer-price-current {
+    font-family: 'Bitter', serif;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    font-size: 12px;
+    color: #2e8f9a; }
+  .card-footer-price-old {
+    font-family: 'Segoe UI';
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    font-size: 11px;
+    color: #777777;
+    text-decoration: line-through; }
+
+.tape {
+  position: absolute;
+  transform: rotateZ(-45deg);
+  top: 11px;
+  left: -20px; }
+  .tape__inner {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    font-family: 'Segoe UI Bold', sans-serif;
+    color: #ffffff;
+    font-size: 11px;
+    line-height: 16px;
+    text-transform: uppercase;
+    background-color: #d35462;
+    height: 14px;
+    width: 76px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none; }
+    .tape__inner:after, .tape__inner:before {
+      content: '';
+      position: absolute;
+      bottom: -2.8px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 3px 3px 0 3px;
+      border-color: #b52838 transparent transparent transparent; }
+    .tape__inner:before {
+      left: 0; }
+    .tape__inner:after {
+      right: 0; }
+
 html {
   height: 100%;
   font-size: 16px;
@@ -661,7 +801,14 @@ h3 {
   font-family: 'Segoe UI Bold';
   font-weight: bold; }
 
+@media screen and (max-width: 980px) {
+  .best-sellers__body {
+    -ms-flex-pack: distribute;
+        justify-content: space-around; } }
+
 @media screen and (max-width: 860px) {
+  .logo__img {
+    height: auto; }
   .slider__title {
     font-size: 28px;
     padding: 0 5px; }
@@ -679,7 +826,6 @@ h3 {
   .search {
     min-width: 80px;
     margin-right: 20px;
-    width: auto;
     -ms-flex-negative: 2;
         flex-shrink: 2; }
   .logo {
@@ -819,11 +965,17 @@ h3 {
     right: 78px; } }
 
 @media screen and (max-width: 420px) {
+  .container {
+    padding: 0 10px; }
   .user-menu__item {
     padding: 0 10px; }
   .main-menu__link {
     padding: 14px 6px;
     font-size: 8.5px; }
+  .cart {
+    padding: 10px 5px; }
+    .cart__img {
+      margin-right: 6px; }
   .logo {
     margin-right: 10px; }
   .search {

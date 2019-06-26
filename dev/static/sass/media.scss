@@ -1,7 +1,14 @@
-@media screen and(max-width: 960px){
-	
+@media screen and(max-width: 980px){
+	.best-sellers__body{
+		justify-content: space-around;
+	}
 }
 @media screen and(max-width: 860px){
+	.logo{
+		&__img{
+			height: auto;
+		}
+	}
 	.slider{
 		&__title{
 			font-size: 28px;
@@ -28,7 +35,6 @@
 	.search{
 		min-width: 80px;
 		margin-right: 20px;
-		width: auto;
 		flex-shrink: 2;
 	}
 	.logo{
@@ -232,6 +238,9 @@
 	}
 }
 @media screen and(max-width: 420px){
+	.container{
+		padding: 0 10px;
+	}
 	.user-menu{
 		&__item{
 			padding: 0 10px;
@@ -241,6 +250,12 @@
 		&__link{
 			padding: 14px 6px;
 			font-size: 8.5px;
+		}
+	}
+	.cart{
+		padding: 10px 5px;
+		&__img{
+			margin-right: 6px;
 		}
 	}
 	.logo{

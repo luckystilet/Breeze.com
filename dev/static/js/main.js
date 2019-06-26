@@ -17,53 +17,52 @@ $(document).ready(function(){
 		}
 	});
 
+	let languagesItems = $('.languages__item'),
+	languagesMobile = $('.languages__mobile'),
+	currencyMobile = $('.currency__mobile'),
+	currencyItems = $('.currency__item');
+
 
 	function activeCloseLogin(){
 		$('#close-login').click(function(){
 			$('.login').removeClass('form--active');
 			$('#close-login').off('click');
+			$(document).off('click');
 		});
+
+		window.setTimeout(function(){
+			$(document).click(function(event) {
+				if ($(event.target).closest($('.login')).length) return;
+				$('.login').removeClass('form--active');
+				event.stopPropagation();
+				$(document).off('click');
+			});
+		},100);
 	}
 
 
-	$('.user-menu__link--login').click(function(){
-		$('.login').toggleClass('form--active');
-		activeCloseLogin();
-	});
-	$('.greeting__link--login').click(function(){
-		$('.login').toggleClass('form--active');
-		activeCloseLogin();
-	});
-
-		function activeCloseSignup(){
-			console.log('activeCloseSignup');
+	function activeCloseSignup(){
 		$('#close-signup').click(function(){
 			$('.signup').removeClass('form--active');
 			$('#close-signup').off('click');
+			$(document).off('click');
 		});
+
+		window.setTimeout(function(){
+			$(document).click(function(event) {
+				if ($(event.target).closest($('.signup')).length) return;
+				$('.signup').removeClass('form--active');
+				event.stopPropagation();
+				$(document).off('click');
+			});
+		},100);
 	}
 
-
-	$('.user-menu__link--signup').click(function(){
-		$('.signup').toggleClass('form--active');
-		activeCloseSignup();
-	});
-	$('.greeting__link--signup').click(function(){
-		$('.signup').addClass('form--active');
-		activeCloseSignup();
-	});
-
-
-	let languagesItems = $('.languages__item'),
-	languagesMobile = $('.languages__mobile'),
-	currencyMobile = $('.currency__mobile'),
-	currencyItems = $('.currency__item');
 	// set content of mobile btns
 	function updateLangMob(){
 		let langAct = $('.languages__item--active').text();
 		$('.languages__mobile').text(langAct);
 	}
-
 
 	function updateCurMob(){
 		let curAct = $('.currency__item--active').text();
@@ -115,31 +114,57 @@ $(document).ready(function(){
 	}
 
 
+
+
+	$('.user-menu__link--signup').click(function(){
+		$('.signup').toggleClass('form--active');
+		activeCloseSignup();
+	});
+	$('.greeting__link--signup').click(function(){
+		$('.signup').addClass('form--active');
+		activeCloseSignup();
+	});
 	languagesMobile.click(function(){
 		$('.languages__list').addClass('languages__list--active');
 		window.setTimeout(activeLangSelection, 50);
 	});
-
-
 	currencyMobile.click(function(){
 		$('.currency__list').addClass('currency__list--active');
 		window.setTimeout(activeCurSelection, 50);
 	});
+	$('.user-menu__link--login').click(function(){
+		$('.login').toggleClass('form--active');
+		activeCloseLogin();
+	});
+	$('.greeting__link--login').click(function(){
+		$('.login').toggleClass('form--active');
+		activeCloseLogin();
+	});
 
-activeLangSelection();
-activeCurSelection();
-updateLangMob();
-updateCurMob();
+	activeLangSelection();
+	activeCurSelection();
+	updateLangMob();
+	updateCurMob();
 });
 
 
 
+const debounce = (callback, delay) => {
+	let timerId;
+	return (...args) => {
+		timerId && clearTimeout(timerId);
+		timerId = setTimeout(
+			() => callback(...args),
+			delay
+			);
+	}
+};
 
-$(window).on('resize load change', function(){
-
+let resizeActions = debounce(function() {
 	let mql = window.matchMedia('all and (max-width: 780px)'),
 	cart = $('.cart');
-	// let small = window.matchMedia('all and (max-width: 480px)');
+	let small = window.matchMedia('all and (max-width: 480px)');
+	let search = $('.search');
 
 	if(mql.matches){
 		$('.search').after(cart);
@@ -149,14 +174,44 @@ $(window).on('resize load change', function(){
 		$('.header-middle__inner').append($('.user-menu'));
 	}
 
-	// if(small.matches){
-	// 	$('.search').click(function(){
-	// 		$('.search').addClass('search--active');
-	// 		$('.search .input-field').select();
-	// 	});
-	// }else{
-	// 	$('.search').removeClass('search--active')
-	// }
+	if(small.matches){
+		let searchIconClick,
+		searchDocClick;
+		$('.search .input-field').attr('placeholder', 'Search...');
+		search.click(function(event){
+			event.stopPropagation();
+			search.addClass('search--active');
+			$('.search .input-field').select();
+			window.setTimeout(function(){
+				searchDocClick = $(document).click(function(event) {
+					if ($(event.target).closest($('.search')).length){
+						console.log('document click IF');
+						return
+					};
+					console.log('document click AFTER IF');
+					$('.search').removeClass('search--active');
+					event.stopPropagation();
+					searchDocClick.off('click');
+					searchIconClick.off('click');
+				});
+			},100);
+
+			// window.setTimeout(function(){
+				searchIconClick = $('.search__icon').click(function(){
+					console.log('search__icon click');
+					$('.search').removeClass('search--active');
+					searchIconClick.off('click');
+					searchDocClick.off('click');
+				});
+			// },100);
+
+		});
+	}else{
+		$('.search .input-field').attr('placeholder', 'Search entire store here...');
+		search.removeClass('search--active')
+		search.off('click');
+		$(document).off('click');
+	}
 	// Расчет высоты слайда, пропорционально ширине по коэффициенту
 	let slideW = $('.slider__item-inner').outerWidth();
 	$('.slider__item-inner').outerHeight(slideW*0.4878);
@@ -166,4 +221,9 @@ $(window).on('resize load change', function(){
 	// Расчет высоты элемента блока преймущества, пропорционально ширине по коэффициенту
 	let productAdvW = $('.product-advantages__item').outerWidth();
 	$('.product-advantages__item').outerHeight(productAdvW*0.3174);
+}, 150);
+
+
+$(window).on('resize load change orientationchange', function(){
+	resizeActions();
 });
