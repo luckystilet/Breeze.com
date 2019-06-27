@@ -211,6 +211,7 @@
 		cursor: pointer;
 		transition: color linear .1s;
 		white-space: nowrap;
+		user-select: none;
 		&:last-child{
 			border: none;
 		}

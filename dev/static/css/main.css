@@ -260,7 +260,11 @@
     color: #777777;
     cursor: pointer;
     transition: color linear .1s;
-    white-space: nowrap; }
+    white-space: nowrap;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none; }
     .user-menu__item:last-child {
       border: none; }
     .user-menu__item:hover {
@@ -441,7 +445,8 @@
   transform: scale(0) translateX(50%);
   transition: transform linear .3s;
   box-shadow: inset 3px 3px 5px -2.4px rgba(255, 255, 255, 0.6), inset -3px -3px 5px -2.4px rgba(255, 255, 255, 0.6), 4px 4px 7px -2px black;
-  z-index: 999; }
+  z-index: 999;
+  cursor: default; }
   .form--active {
     transform: scale(1) translateX(50%); }
   .form-btn {
@@ -611,13 +616,6 @@
 
 .best-sellers {
   margin-bottom: 200px; }
-  .best-sellers__body {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: justify;
-        justify-content: space-between;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap; }
 
 .card {
   overflow: hidden;
