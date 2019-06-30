@@ -1,0 +1,73 @@
+.footer{
+	&__body{
+		background-image: url("../img/footer-bg.png");
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+		padding: 55px 0;
+		border-top: solid 1px $alto-lighter;
+		border-bottom: solid 1px $alto-lighter;
+		&-inner{
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+	&__footer{
+		background-color: $catskill-white;
+		&-inner{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			height: 70px;
+		}
+	}
+	&__copyright{
+		color: $alto-lighter;
+		font-size: 11px;
+	}
+	&__social{
+		&>*{&:not(:last-child){margin-right: 4px;}}
+	}
+	&-column{
+		flex-basis: 23.37%;
+		&__header{
+			font-size: 18px;
+			color: $tundora;
+			border-bottom: 1px solid $alto-lighter;
+			margin-bottom: 24px;
+		}
+		&__item{
+			display: block;
+			font-size: 12px;
+			color: $boulder;
+			margin-bottom: 12px;
+			&:last-child{
+				margin-bottom: 0;
+			}
+			&--big{
+				margin-bottom: 15px;
+				padding-left: 22px;
+				background-repeat: no-repeat;
+				background-position: left center;
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
+			&--loc{
+				background-image: url("../img/icon-loc.png");
+				background-size: 8px 13px;
+			}
+			&--tel{
+				background-image: url("../img/icon-tel.png");
+				background-size: 16px 12px;
+			}
+			&--mail{
+				background-image: url("../img/icon-mail.png");
+				background-size: 15px 10px;
+			}
+		}
+		&__title{
+			margin-bottom: 10px;
+		}
+	}
+}

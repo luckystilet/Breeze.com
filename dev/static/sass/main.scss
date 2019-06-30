@@ -3,11 +3,13 @@
 @import 'mixins';
 @import 'fonts';
 @import 'header/header';
+@import 'footer/footer';
 @import 'slider';
 @import 'product-advantages';
 @import 'form';
 @import 'btns';
-@import 'best-sellers';
+@import 'product-line';
+@import 'info-block';
 html{
   height: 100%;
   font-size: 16px;
@@ -63,6 +65,18 @@ input,select,button{
 }
 .mobile-br{
   display: none;
+}
+.text{
+  font-size: 11px;
+  color: $boulder;
+  font-family: 'Segoe UI';
+  margin-bottom: 22px;
+  &:last-child{
+    margin-bottom: 0;
+  }
+  &--blue{
+    color: $astral;
+  }
 }
 h1{
   color: #000;

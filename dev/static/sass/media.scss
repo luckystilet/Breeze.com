@@ -1,9 +1,18 @@
 @media screen and(max-width: 980px){
-	.best-sellers__body{
+	.product-line__body{
 		justify-content: space-around;
+	}
+	.product-line{
+		margin-bottom: 35px;
+	}
+	.product-line__header{
+		margin-bottom: 25px;
 	}
 }
 @media screen and(max-width: 860px){
+	.product-line{
+		margin-bottom: 30px;
+	}
 	.logo{
 		&__img{
 			height: auto;
@@ -92,8 +101,51 @@
 			font-size: 16px;
 		}
 	}
+	.info-block{
+		&-column{
+			&__title{
+				margin-bottom: 20px;
+			}
+		}
+		&__column{
+			padding: 10px 15px;
+		}
+	}
+	.text{
+		margin-bottom: 15px;
+	}
+	.news__item{
+		margin-bottom: 15px;
+	}
+	.card{
+		width: 234px !important; // Перекрытие стилей Слика
+		display: block !important; // Перекрытие стилей Слика
+		margin: 0 auto;
+	}
+	.info-block{
+		margin-bottom: 50px;
+	}
+	.footer{
+		&__body{
+			padding: 35px 0;
+		}
+		&__footer{
+			&-inner{
+				height: 60px;
+			}
+		}
+		&-column{
+			&__title{
+				font-size: 16px;
+				margin-bottom: 8px;
+			}
+		}
+	}
 }
 @media screen and(max-width: 640px){
+	.product-line__title{
+		font-size: 20px;
+	}
 	.header-middle{
 		&__inner{
 			margin-top: 15px;
@@ -187,6 +239,54 @@
 			font-size: 12px;
 		}
 	}
+	.info-block{
+		flex-direction: column;
+		justify-content: flex-start;
+		&>*{
+			margin: 5px 0px;
+			&:first-child {margin-top: 0;}
+			&:last-child {margin-bottom: 0;}
+		}
+		&-column{
+			&__title{
+				margin-bottom: 10px;
+				font-size: 16px;
+			}
+			&__line{
+				justify-content: flex-start;
+			}
+		}
+	}
+	.menu-selection{
+		&__item{
+			&:after{
+				content: none;
+			}
+		}
+	}
+	.footer{
+		&__body{
+			&-inner{
+				flex-wrap: wrap;
+			}
+		}
+		&-column{
+			flex-basis: 45%;
+			margin-bottom: 25px;
+			&:nth-last-child(-n+2){
+				margin-bottom: 0;
+			}
+			&:last-child{
+				margin-bottom: 0;
+			}
+			&__header{
+				margin-bottom: 12px;
+			}
+			&__item{
+				font-size: 11px;
+			}
+		}
+	}
 }
 @media screen and(max-width: 540px){
 	.main-menu{
@@ -230,11 +330,38 @@
 			font-size: 8px;
 		}
 	}
-	.signup{
-		right: 140px;
+	.form{
+		display: none;
+		position: fixed;
+		top: 50%;
+		right: 50%;
+		transform: translateY(-50%) translateX(50%);
 	}
-	.login{
-		right: 78px;
+	.product-line{
+		margin-bottom: 25px;
+		&__header{
+			margin-bottom: 10px;
+		}
+		&__control{
+			height: 35px;
+			width: 35px;
+		}
+	}
+	.text{
+		margin-bottom: 10px;
+		font-size: 10px;
+	}
+	.footer{
+		&__footer{
+			&-inner{
+				height: 50px;
+			}
+		}
+		&-column{
+			&__title{
+				font-size: 14px;
+			}
+		}
 	}
 }
 @media screen and(max-width: 420px){

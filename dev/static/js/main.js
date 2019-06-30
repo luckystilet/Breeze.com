@@ -12,51 +12,74 @@ let languagesItems = $('.languages__item'),
 languagesMobile = $('.languages__mobile'),
 currencyMobile = $('.currency__mobile'),
 currencyItems = $('.currency__item'),
+signupForm = $('.signup'),
+loginForm = $('.login'),
 doc = $(document),
 documentClickLang,
 langItemsClick,
 closeLoginClick,
-closeSignupClick;
-
+closeSignupClick,
+maxS540 = window.matchMedia('all and (max-width: 540px)');
 
 
 let activeCloseLogin = debounce(function(){
-	$('.login').toggleClass('form--active');
+	loginForm.toggleClass('form--active');
+	if(maxS540.matches){
+		loginForm.fadeIn(400);
+	}
+	else{
+		loginForm.css('display', 'block');
+	}
 	let documentClickCloseLogin;
 	closeLoginClick = $('#close-login').click(function(){
 		console.log('Закрытие логина по клику по кнопке');
-		$('.login').removeClass('form--active');
+		loginForm.removeClass('form--active');
 		$('#close-login').off('click');
 		documentClickCloseLogin.off('click');
+		if(maxS540.matches){
+			loginForm.fadeOut(400);
+		}
 	});
 
 
 	documentClickCloseLogin = doc.click(function(event){
 		console.log('Закрытие логина по клику вне блока');
 		if ($(event.target).closest($('.login')).length) return;
-		$('.login').removeClass('form--active');
-		// event.stopPropagation();
+		loginForm.removeClass('form--active');
 		closeLoginClick.off('click');
 		documentClickCloseLogin.off('click');
+		if(maxS540.matches){
+			loginForm.fadeOut(400);
+		}
 	});
 },200);
 
 
 let activeCloseSignup = debounce(function(){
-	$('.signup').toggleClass('form--active');
+	signupForm.toggleClass('form--active');
+	if(maxS540.matches){
+		signupForm.fadeIn(400);
+	}
 	let documentClickCloseSignup;
 	closeSignupClick = $('#close-signup').click(function(){
-		$('.signup').removeClass('form--active');
+		signupForm.removeClass('form--active');
 		closeSignupClick.off('click');
 		documentClickCloseSignup.off('click');
+		if(maxS540.matches){
+			signupForm.fadeOut(400);
+		}
+
 	});
 
 	documentClickCloseSignup = doc.click(function(event) {
 		console.log('click documentClickCloseSignup');
-		if ($(event.target).closest($('.signup')).length) return;
-		$('.signup').removeClass('form--active');
+		if ($(event.target).closest(signupForm).length) return;
+		signupForm.removeClass('form--active');
 		documentClickCloseSignup.off('click');
 		closeSignupClick.off('click')
+		if(maxS540.matches){
+			signupForm.fadeOut(400);
+		}
 	});
 },200);
 
@@ -135,7 +158,7 @@ function updateCurMob(){
 }
 
 function updatePriceCur(){
-	$('.cart__currency').text($('.currency__item--active').text());
+	$('.page-currency').text($('.currency__item--active').text());
 }
 
 
@@ -159,24 +182,42 @@ $(document).ready(function(){
 		}
 	});
 
-		$('.best-sellers-js').slick({
-		slidesToShow: 4,
-		slidesToScroll: 1,
-		// prevArrow: '.slider__controls--prev',
-		// nextArrow: '.slider__controls--next',
-		easing: 'swing',
-		speed: 700,
-		// appendDots: $('.slider__dots'),
-		dots: true,
-		// dotsClass: 'custom-dots',
-		// customPaging: function (slider, i) {
-		// 	var slideNumber = (i + 1),
-		// 	totalSlides = slider.slideCount;
-		// 	return '<a class="slider__dot" role="button" title="' + slideNumber + ' of ' + totalSlides + '"></a>';
-		// }
+
+	$('.product-line').each(function(index){
+		let productLinePrev = 'product-line__control--prev-' + (index+1);
+		let productLineNext = 'product-line__control--next-' + (index+1);
+		console.log(productLinePrev);
+		$(this).find('.product-line__control--prev').attr('id',productLinePrev);
+		$(this).find('.product-line__control--next').attr('id',productLineNext);
+		$(this).find('.product-line-js').slick({
+			slidesToShow: 4,
+			slidesToScroll: 1,
+			prevArrow: '#'+productLinePrev,
+			nextArrow: '#'+productLineNext,
+			easing: 'swing',
+			speed: 700,
+			responsive: [
+			{
+				breakpoint: 980,
+				settings: {
+					slidesToShow: 3,
+				}
+			},
+			{
+				breakpoint: 780,
+				settings: {
+					slidesToShow: 2,
+				}
+			},
+			{
+				breakpoint: 500,
+				settings: {
+					slidesToShow: 1,
+				}
+			}
+			]
+		});
 	});
-
-
 
 
 
@@ -227,6 +268,7 @@ let smallSizeWasActivated = false,
 mql = window.matchMedia('all and (max-width: 780px)'),
 small = window.matchMedia('all and (max-width: 480px)'),
 mobileLangCurSize = window.matchMedia('all and (min-width: 641px)'),
+maxS680 = window.matchMedia('all and (max-width: 680px)'),
 search = $('.search'),
 searchInput = $('.search .input-field'),
 cart = $('.cart'),
@@ -252,6 +294,20 @@ let resizeActions = debounce(function() {
 		activeCurSelectionDT();
 	}
 
+	if(maxS540.matches){
+		signupForm.css('display', 'none');
+		loginForm.css('display', 'none');
+	}else{
+		signupForm.css('display', 'block');
+		loginForm.css('display', 'block');
+	}
+
+	if(maxS680.matches){
+		$('.info-block-column__line--input .input-field').attr('placeholder', 'Your Email');
+	}else{
+		$('.info-block-column__line--input .input-field').attr('placeholder', 'Enter your email address...');
+	}
+
 	if(small.matches){
 		smallSizeWasActivated = true;
 
@@ -265,22 +321,19 @@ let resizeActions = debounce(function() {
 				searchInput.off('click');
 				console.log('Клик по searchInput');
 				search.addClass('search--active');
-				window.setTimeout(function(){
-					// document click to close
-					searchDocClick = $(document).click(function(event) {
-						if ($(event.target).closest($('.search')).length){
-							console.log('document click отфильтрован как клик по поиску.');
-							return
-						};
-						console.log('Клик вне Search input');
-						search.removeClass('search--active');
-						event.stopPropagation();
-						searchDocClick.off('click');
-						searchIconClick.off('click');
-						searchInput.off('click');
-						searchActions();
-					});
-				},100);
+				searchDocClick = $(document).click(function(event) {
+					if ($(event.target).closest($('.search')).length){
+						console.log('document click отфильтрован как клик по поиску.');
+						return
+					};
+					console.log('Клик вне Search input');
+					search.removeClass('search--active');
+					event.stopPropagation();
+					searchDocClick.off('click');
+					searchIconClick.off('click');
+					searchInput.off('click');
+					searchActions();
+				});
 				// Search Icon
 				searchIconClick = searchIcon.click(function(){
 					console.log('search__icon click');
@@ -299,8 +352,6 @@ let resizeActions = debounce(function() {
 			$('.search .input-field').attr('placeholder', 'Search entire store here...');
 			search.removeClass('search--active');
 			searchInput.off('click');
-			searchDocClick.off('click');
-			searchIconClick.off('click');
 		}
 	}
 
@@ -314,6 +365,14 @@ let resizeActions = debounce(function() {
 	// Расчет высоты элемента блока преймущества, пропорционально ширине по коэффициенту
 	let productAdvW = $('.product-advantages__item').outerWidth();
 	$('.product-advantages__item').outerHeight(productAdvW*0.3174);
+	// Расчет пропорций высоты и ширины карточки
+	// let cardW = $('.card').outerWidth();
+	// $('.card__body').outerHeight(cardW*1.17094);
+	// $('.card__footer').outerHeight(cardW*0.188034188);
+
+
+
+
 }, 300);
 
 

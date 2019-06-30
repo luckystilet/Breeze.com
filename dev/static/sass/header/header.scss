@@ -1,3 +1,32 @@
+.menu-selection{
+	&__item{
+		position: relative;
+		background-color: $athens-grayer;
+		font-family: 'Segoe UI', sans-serif;
+		line-height: 36px;
+		padding: 0 10px;
+		cursor: pointer;
+		text-transform: uppercase;
+		user-select: none;
+		&:after{
+			content: '';
+			position: absolute;
+			display: block;
+			width: 100%;
+			height: 2px;
+			left: 0;
+			bottom: -5px;
+			background-color: $curious-blue;
+			transform: scale(0);
+			transition: all linear .2s;
+		}
+		&:hover{
+			&:after{
+				transform: scale(1);
+			}
+		}
+	}
+}
 .header{
 	&-top{
 		padding-top: 9px;
@@ -64,13 +93,6 @@
 		}
 	}
 	&__item{
-		background-color: $athens-grayer;
-		font-family: 'Segoe UI', sans-serif;
-		line-height: 36px;
-		padding: 0 10px;
-		cursor: pointer;
-		text-transform: uppercase;
-		user-select: none;
 		&--active{
 			font-family: 'Segoe UI Bold', sans-serif;
 			color: $white;
@@ -100,13 +122,6 @@
 		}
 	}
 	&__item{
-		background-color: $athens-grayer;
-		font-family: 'Segoe UI', sans-serif;
-		line-height: 36px;
-		padding: 0 10px;
-		cursor: pointer;
-		text-transform: uppercase;
-		user-select: none;
 		&--active{
 			font-family: 'Segoe UI Bold', sans-serif;
 			color: $white;
@@ -161,6 +176,20 @@
 		border: 1px solid $silver;
 		border-radius: 2px;
 		transition: all linear .2s;
+		&:hover{
+			border-color: transparent;
+		}
+		input{
+			padding-right: 30px;
+			border-radius: 2px;
+			transition: box-shadow linear .2s;
+			&:hover{
+				box-shadow: 0 0 0 2px $astral;
+			}
+			&:focus{
+				box-shadow: 0 0 0 2px $astral;
+			}
+		}
 	}
 	.input-field{
 		padding: 6px 0px 6px 9px;
@@ -177,6 +206,10 @@
 		}
 	}
 	&__icon{
+		transform: translateY(-50%);
+    right: 0;
+    top: 50%;
+    position: absolute;
 		margin: 0 8px;
 		width: 14px;
 		height: 14px;
@@ -219,14 +252,6 @@
 			color: $black;
 		}
 	}
-	// &__link{
-	// 	&--login{
-	// 		position: relative;
-	// 	}
-	// 	&--signup{
-	// 		position: relative;
-	// 	}
-	// }
 }
 .cart{
 	display: flex;

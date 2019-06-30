@@ -1,33 +1,89 @@
-.best-sellers{
-	margin-bottom: 200px;
+.product-line{
+	margin-bottom: 57px;
+	&__header{
+		display: flex;
+		justify-content: space-between;
+		border-bottom: 1px solid $alto-lighter;
+		margin-bottom: 40px;
+		padding-bottom: 8px;
+	}
 	&__body{
-		// display: flex;
-		// justify-content: space-between;
-		// flex-wrap: wrap;
+	}
+	&__title{
+		margin-top: auto;
+		margin-bottom: 10px;
+		font-size: 24px;
+		color: $tundora;
+		line-height: 1;
+	}
+	&__controls{
+		display: flex;
+		&>*{&:not(:last-child){margin-right: 8px;}}
+	}
+	&__control{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 42px;
+		height: 42px;
+		background-color: $athens-gray;
+		cursor: pointer;
+		&-inner{
+			width: 8px;
+			height: 8px;
+			border-bottom: 1px solid $boulder;
+			border-right: 1px solid $boulder;
+		}
+		&--next{
+			.product-line__control-inner{
+				transform: rotateZ(-45deg);
+			}
+		}
+		&--prev{
+			.product-line__control-inner{
+				transform: rotateZ(135deg);
+			}
+		}
 	}
 }
+.slick-list{
+	margin: 0 -9px;
+}
+.slick-slide{
+	padding: 0 9px;
+}
 .card{
+	display: flex;
+	flex-direction: column;
 	overflow: hidden;
 	padding: 3px;
 	width: 234px;
-	margin-bottom: 24px;
 	&__body{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 		position: relative;
+		// align-self: stretch;
+		height: 274px;
+		flex-grow: 1;
 		padding: 8px;
 		border: 1px solid $alto-lighter;
 		border-radius: 2px 2px 0 0;
 	}
 	&__footer{
+		height: 44px;
 		border: 1px solid $alto-lighter;
 		border-top: none;
 		display: flex;
-		height: 44px;
 		border-radius: 0px 0 2px 2px;
 	}
 	&-body{
 		&__image{
+			max-width: 100%;
+			max-height: 100%;
 			&-bg{
-				height: 210px;
+				flex-basis: 82.81%;
+				flex-shrink: 1;
 				display: flex;
 				justify-content: center;
 				align-items: center;
@@ -35,7 +91,8 @@
 			}
 		}
 		&__descr{
-			margin-top: 10px;
+			// flex-basis: 17.19%;
+			flex-shrink: 1;
 			color: $boulder;
 			font-family: 'Bitter', serif;
 			font-size: 13px;
@@ -130,3 +187,4 @@
 		}
 	}
 }
+
